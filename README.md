@@ -2,6 +2,8 @@
 
 An Ansible role to backup MySQL databases to AWS S3 via a Docker container. This role uses the [iainmckay/mysql-backup](https://hub.docker.com/r/iainmckay/mysql-backup/) docker image.
 
+See also [opichon.docker-mysql](https://galaxy.ansible.com/opichon/docker-mysql/)
+
 ## Requirements
 
 This role requires Ansible 1.2 or higher.
@@ -24,7 +26,7 @@ mysql_backup_s3_bucket
 mysql_backup_s3_path
 ```
 
-For the significance of these variables, see the documentation of the [iainmckay/mysql-backup](https://hub.docker.com/r/iainmckay/mysql-backup/) docker image.
+For the meaning of these variables, see the documentation of the [iainmckay/mysql-backup](https://hub.docker.com/r/iainmckay/mysql-backup/) docker image.
 
 ## Example playbooks
 
