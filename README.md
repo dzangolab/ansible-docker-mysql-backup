@@ -34,7 +34,7 @@ For the significance of these variables, see the documentation of the [iainmckay
 	roles:
 		- name: Backup db1 and db2 databases
 		  role: opichon.mysql-backup
-		  command: backup db1 db2
+		  mysql_backup_command: backup db1 db2
 ```
 
 ```
@@ -43,7 +43,7 @@ For the significance of these variables, see the documentation of the [iainmckay
 	roles:
 		- name: Restore db1 and db2 databases
 		  role: opichon.mysql-backup
-		  command: restore db1 db2
+		  mysql_backup_command: restore db1 db2
 ```
 
 ## License

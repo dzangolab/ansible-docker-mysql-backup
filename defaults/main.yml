@@ -1,1 +1,1 @@
-command: backup
+mysql_backup_command: backup
