@@ -1,6 +1,6 @@
-# Ansible Role: Backup MySQL database to AWS S3 via Docker container
+# Ansible Role: Backup MySQL databases to AWS S3 via Docker container
 
-An Ansible role to backup MySQL databases to AWS S3 via a Docker container. This role uses the [iainmckay/mysql-backup](https://hub.docker.com/r/iainmckay/mysql-backup/) docker container.
+An Ansible role to backup MySQL databases to AWS S3 via a Docker container. This role uses the [iainmckay/mysql-backup](https://hub.docker.com/r/iainmckay/mysql-backup/) docker image.
 
 ## Requirements
 
@@ -24,18 +24,26 @@ mysql_backup_s3_bucket
 mysql_backup_s3_path
 ```
 
-To backup 1 or several databases, add the database names to the `command` variable: `backup db1 db2 ...`.
+For the significance of these variables, see the documentation of the [iainmckay/mysql-backup](https://hub.docker.com/r/iainmckay/mysql-backup/) docker image.
 
-A value of `backup` for the `command` variable should backup all databases. However, at the time of this writing, a bug in the `iainmckay/mysql-backup` container causes an error.
-
-## Example playbook
+## Example playbooks
 
 ```
 ---
-- hosts: mysql_server
-  roles:
-  	- opichon.mysql-backup
-  	  command: backup <db1> <db2>
+- 	hosts: mysql_server
+	roles:
+		- name: Backup db1 and db2 databases
+		  role: opichon.mysql-backup
+		  command: backup db1 db2
+```
+
+```
+---
+- 	hosts: mysql_server
+	roles:
+		- name: Restore db1 and db2 databases
+		  role: opichon.mysql-backup
+		  command: restore db1 db2
 ```
 
 ## License
