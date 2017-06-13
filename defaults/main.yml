@@ -1,1 +1,2 @@
 mysql_backup_command: backup
+mysql_backup_port: 3306
