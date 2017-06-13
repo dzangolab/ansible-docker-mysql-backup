@@ -1,7 +1,5 @@
 ---
 - name: Backup databases
-  become: yes
-  become_user: "{{ gitlab_runner__user }}"
   docker_container:
     env:
       AWS_ACCESS_KEY_ID: "{{ mysql_backup_aws_access_key_id }}"
@@ -14,7 +12,7 @@
       S3_PATH: "{{ mysql_backup_s3_path }}"
     command: "{{ mysql_backup_command }}"
     image: iainmckay/mysql-backup
-    name: mysql57-backup
+    name: mysql-backup
     networks:
       - name: "{{ mysql_backup_network }}"
     pull: true
