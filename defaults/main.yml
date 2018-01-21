@@ -1,5 +1,7 @@
 mysql_backup_databases: "--all-databases"
+mysql_backup_dump_options: "--quote-names --quick --add-drop-table --add-locks --allow-keywords --disable-keys --extended-insert --single-transaction --create-options --comments --net_buffer_length=16384"
 mysql_backup_host: mysql
+mysql_backup_multifiles: true
 mysql_backup_port: 3306
 mysql_backUP_s3_region: "eu-west-1"
 mysql_backup_schedule: "@daily"

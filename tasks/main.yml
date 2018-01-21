@@ -2,7 +2,7 @@
 - name: Backup mysql databases
   docker_container:
     env:
-      MULTIFILES: "{{ mysql_backup_multifiles }}"
+      MULTI_FILES: "{{ mysql_backup_multifiles }}"
       MYSQLDUMP_DATABASE: "{{ mysql_backup_databases }}"
       MYSQLDUMP_OPTIONS: "{{ mysql_backup_dump_options }}"
       MYSQL_HOST: "{{ mysql_backup_host }}"
