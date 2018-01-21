@@ -1,2 +1,5 @@
-mysql_backup_command: backup
+mysql_backup_databases: "--all-databases"
+mysql_backup_host: mysql
 mysql_backup_port: 3306
+mysql_backUP_s3_region: "eu-west-1"
+mysql_backup_schedule: "@daily"

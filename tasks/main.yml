@@ -1,18 +1,21 @@
 ---
-- name: Backup databases
+- name: Backup mysql databases
   docker_container:
     env:
-      AWS_ACCESS_KEY_ID: "{{ mysql_backup_aws_access_key_id }}"
-      AWS_SECRET_ACCESS_KEY: "{{ mysql_backup_aws_secret_access_key }}"
-      AWS_DEFAULT_REGION: "{{ mysql_backup_aws_region }}"
+      MULTIFILES: "{{ mysql_backup_multifiles }}"
+      MYSQLDUMP_DATABASE: "{{ mysql_backup_databases }}"
+      MYSQLDUMP_OPTIONS: "{{ mysql_backup_dump_options }}"
       MYSQL_HOST: "{{ mysql_backup_host }}"
+      MYSQL_PASSWORD: "{{ mysql_backup_password }}"
       MYSQL_PORT: "{{ mysql_backup_port }}"
       MYSQL_USER: "{{ mysql_backup_user }}"
-      MYSQL_PASSWORD: "{{ mysql_backup_password }}"
+      S3_ACCESS_KEY_ID: "{{ mysql_backup_s3_access_key_id }}"
       S3_BUCKET: "{{ mysql_backup_s3_bucket }}"
-      S3_PATH: "{{ mysql_backup_s3_path }}"
-    command: "{{ mysql_backup_command }}"
-    image: iainmckay/mysql-backup
+      S3_PREFIX: "{{ mysql_backup_s3_prefix }}"
+      S3_REGION: "{{ mysql_backup_s3_region }}"
+      S3_SECRET_ACCESS_KEY: "{{ mysql_backup_s3_secret_access_key }}"
+      SCHEDULE: "{{ mysql_backup_schedule }}"
+    image: schickling/mysql-backup-s3
     name: mysql-backup
     networks:
       - name: "{{ mysql_backup_network }}"
