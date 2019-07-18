@@ -1,7 +1,8 @@
 galaxy_info:
-  author: Olivier Pichon <op@united-asian.com>
+  role_name: docker_mysql_backup
+  author: Olivier Pichon <op@dzaango.com>
   description: Backup mysql database to AWS S3 via docker container
-  company: United Asian Management Limited
+  company: Dzango Technologies Limited
 
   license: license (MIT)
 
