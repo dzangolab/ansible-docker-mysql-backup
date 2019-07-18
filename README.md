@@ -40,8 +40,7 @@ For the meaning of these variables, see the documentation of the [schickling/mys
 - 	hosts: mysql_server
 	roles:
 		- name: Backup db1 and db2 databases
-		  role: dzangolab.mysql_backup
-		  mysql_backup_command: backup db1 db2
+		  role: dzangolab.dzangolab_mysql_backup
 ```
 
 ```
@@ -49,8 +48,7 @@ For the meaning of these variables, see the documentation of the [schickling/mys
 - 	hosts: mysql_server
 	roles:
 		- name: Restore db1 and db2 databases
-		  role: dzangolab.mysql-backup
-		  mysql_backup_command: restore db1 db2
+		  role: dzangolab.dzangolab_mysql_backup
 ```
 
 ## License
